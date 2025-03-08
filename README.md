@@ -34,3 +34,34 @@ If you have the project files:
 - Navigate to the directory:
   ```bash
   cd path/to/water_level_project
+
+- Install python dependencies
+  ```bash
+  pip install flask flask-cors pandas numpy scikit-learn joblib
+
+- If pip doesn't work use
+   ```bash 
+   pip3 install flask flask-cors pandas numpy scikit-learn joblib
+
+- Ensure the following files are present:
+
+data.py: Flask server script.
+index.html: Frontend form.
+script.js: JavaScript logic.
+water_level_model.joblib: Pre-trained model (generate it with pyhton model.py if missing).
+
+Start the Flask Server
+- Open a terminal in the project directory:
+  ```bash
+  cd path/to/water_level_project
+- Run the Flask app:
+  ```bash
+  python data.py
+
+Serve the Frontend
+- Open a second terminal window
+- Run the HTTP server:
+  ```bash
+  python -m http.server 8000
+- Open your browser and go to:
+  [text](http://localhost:8000/index.html)
