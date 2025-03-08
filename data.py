@@ -6,19 +6,19 @@ from sklearn.linear_model import LinearRegression
 import joblib
 
 app = Flask(__name__)
-CORS(app)  # This enables CORS for all routes
+CORS(app)  
 
-# Load your trained model
+
 model = joblib.load('water_level_model.joblib')
 
 @app.route('/data', methods=['POST'])
 def process_data():
     data = request.json
     
-    # Convert the received data to a pandas DataFrame
+   
     df = pd.DataFrame([data])
     
-    # Rename columns to match your training data
+ 
     df = df.rename(columns={
         'temp': 'Temperature_C',
         'rainfall': 'Rainfall_mm',
@@ -26,10 +26,10 @@ def process_data():
         'dissolvedOxygen': 'Dissolved_Oxygen_mg_L'
     })
     
-    # Ensure the order of columns matches your training data
+    
     df = df[['Temperature_C', 'Rainfall_mm', 'pH', 'Dissolved_Oxygen_mg_L']]
     
-    # Make prediction
+ 
     prediction = model.predict(df)
     
     return jsonify({
