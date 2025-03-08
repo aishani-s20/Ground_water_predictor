@@ -64,4 +64,5 @@ Serve the Frontend
   ```bash
   python -m http.server 8000
 - Open your browser and go to:
-  [text](http://localhost:8000/index.html)
+  ```bash
+  http://localhost:8000/index.html
