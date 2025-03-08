@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Data Input</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        p{
+            text-align: left;
+            font-size: 15px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+        }
+
+        button {
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #888;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #333;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Environmental Data Input</h1>
+        <p>This prediction system is powered by a Linear Regression Model, which analyzes historical groundwater data
+            and establishes relationships between these environmental parameters. The model learns from past datasets,
+            identifying trends and patterns to make reliable predictions about future groundwater levels.</p>
+        <form id="environmentalForm">
+            <label for="temp">Temperature (in C):</label>
+            <input type="number" id="temp" name="temp" step="0.001" required>
+
+            <label for="rainfall">Rainfall (in mm):</label>
+            <input type="number" id="rainfall" name="rainfall" step="0.001" required>
+
+            <label for="ph">pH:</label>
+            <input type="number" id="ph" name="ph" step="0.001" min="0" max="14" required>
+
+            <label for="dissolvedOxygen">Dissolved Oxygen (in mg/L):</label>
+            <input type="number" id="dissolvedOxygen" name="dissolvedOxygen" step="0.001" required>
+
+            <button type="submit">Predict Ground Water Level</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
