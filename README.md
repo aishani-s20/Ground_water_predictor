@@ -5,14 +5,12 @@ This project is a web-based application that predicts water levels based on envi
 ## Project Structure
 ```
 water_level_project/
-├── app.py                   # Flask backend server
+├── data.py                   # Flask backend server
 ├── index.html              # Frontend HTML form
 ├── script.js               # JavaScript for form submission
 ├── water_level_model.joblib # Pre-trained machine learning model
 ├── DWLR_Dataset_2023.csv   # Sample dataset for training (optional)
-├── train_model.py          # Script to train and save the model
-├── requirements.txt        # Python dependencies
-├── Procfile                # Heroku deployment configuration (optional)
+├── model.py          # Script to train and save the model
 └── README.md               # This file
 ```
 
